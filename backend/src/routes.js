@@ -1,6 +1,6 @@
 const express = require('express');
 
-//adiciono os dois controladores que são responsáveis pelas funcionalidades
+//adiciono os controladores que são responsáveis pelas funcionalidades
 const OngController = require('./controllers/OngController');
 const IncidentController = require('./controllers/IncidentController');
 const ProfileController = require('./controllers/ProfileController');
