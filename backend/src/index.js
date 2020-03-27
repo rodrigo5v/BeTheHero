@@ -10,5 +10,5 @@ app.use(cors());
 app.use(express.json());
 app.use(routes);
 
-//faço minha aplicação ficar nessa porta para acesse-la
+//faço minha aplicação ficar nessa porta para acesse-la do meu computador local
 app.listen(3333);
