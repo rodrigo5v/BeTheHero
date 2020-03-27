@@ -18,7 +18,7 @@ module.exports = {
                 'ongs.whatsapp',
                 'ongs.city',
                 'ongs.uf']);
-
+        //mostro os casos totais 
         response.header('X-Total-Count', count['count(*)']);
 
         return response.json(incidentes);
@@ -32,7 +32,7 @@ module.exports = {
          * etc.
          */
         const ong_id = request.headers.authorization;
-
+        //insiro o novo caso no banco
         const [id] = await connection('incidentes').insert({
             title,
             description,
@@ -46,12 +46,12 @@ module.exports = {
     async delete(request, response){
         const { id } = request.params; 
         const ong_id = request.headers.authorization;
-
+        //procuro o id do caso no banco
         const incident = await connection('incidentes')
         .where('id', id)
         .select('ong_id')
         .first();
-
+        
         if(incident.ong_id != ong_id){
             return response.status(401).json({error: "Operation not permited"});
         }

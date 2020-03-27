@@ -4,7 +4,7 @@ const connection = require('../database/connection');
 module.exports = {
     async create (request, response){
         const {id} = request.body;
-
+        //procuro a ong que tenha o id inserido no começo da sessão e o seu nome
         const ong = await connection('ongs')
         .where('id',id)
         .select('name')
